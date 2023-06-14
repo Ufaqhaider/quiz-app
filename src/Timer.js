@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 
 
 
-const Timer = ({quesnum, setTimeOut}) => {
+const Timer = ({quesnum, settimeOut}) => {
   const [time, setTime] = useState(30);
 
   useEffect(() => {
-    if (time === 0) return setTimeOut(true);
+    if (time === 0) return settimeOut(true);
     const interval = setInterval(() => {
       setTime((time) => time - 1);
     }, 1000);
@@ -14,7 +14,7 @@ const Timer = ({quesnum, setTimeOut}) => {
     return () => {
       clearInterval(interval);
     };
-  }, [time,setTimeOut]);
+  }, [time,settimeOut]);
 
   useEffect(() => {
     setTime(30);
